@@ -13,6 +13,7 @@
   </thead>
 
   <tbody>
+
     <% @reports.each do |report| %>
       <tr>
         <td><%= report.first_name %></td>
@@ -25,7 +26,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Report', new_report_path %>
