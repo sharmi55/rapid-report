@@ -16,6 +16,7 @@
 
     <% @reports.each do |report| %>
       <tr>
+        <td><%= image_tag report.image.url(:thumb) %></td>
         <td><%= report.first_name %></td>
         <td><%= report.last_name %></td>
         <td><%= report.summary %></td>
