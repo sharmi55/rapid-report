@@ -3,13 +3,8 @@
 <%= image_tag @report.image.url(:medium) %>
 
 <p>
-  <strong>First name:</strong>
-  <%= @report.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @report.last_name %>
+  <strong>Full Name:</strong>
+  <%= @report.first_name + " " + @report.last_name %>
 </p>
 
 <p>
