@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
-$navbar-default-bg: #a3a3c2;
+$navbar-default-bg: white;
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
@@ -22,7 +22,6 @@ $navbar-default-bg: #a3a3c2;
     float: left;
     font-family:'Courgette', cursive;
     font-size: 2em;
-    color: #ffe6e6;
     letter-spacing: -1px;
     font-weight: bold;
     text-align: center;
