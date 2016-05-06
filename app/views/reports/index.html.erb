@@ -20,9 +20,11 @@
         <td><%= report.first_name %></td>
         <td><%= report.last_name %></td>
         <td><%= report.summary %></td>
-        <td><%= link_to 'Show', report %></td>
-        <td><%= link_to 'Edit', edit_report_path(report) %></td>
-        <td><%= link_to 'Destroy', report, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Show', report %></td>
+          <% if report.user == current_user %>
+          <td><%= link_to 'Edit', edit_report_path(report) %></td>
+          <td><%= link_to 'Destroy', report, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
