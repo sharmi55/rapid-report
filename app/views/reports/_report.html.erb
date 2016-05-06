@@ -1,0 +1,7 @@
+
+<%= div_for(report) do %>
+	<div class="reports_wrapper clearfix">
+		<div class="pull-left">
+      <p><small> Submitted <%= time_ago_in_words(report.created_at) %> ago by <%= report.user_id %> </small>
+		</div>
+<% end %>

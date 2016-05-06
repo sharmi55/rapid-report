@@ -16,8 +16,9 @@
   </p>
 </div>
 
-<div>
-<small>Submitted by <%= @report.user_id %></small></div>
+<div id="reports">
+  <%= render :partial => @report%>
+</div>
 
 <%= link_to 'Edit', edit_report_path(@report) %> |
 <%= link_to 'Back', reports_path %>
