@@ -6,9 +6,8 @@ class Report < ActiveRecord::Base
 
   def self.search(search)
     if search
-      where("full_name LIKE ?", "%#{search}%")
-      where("last_name LIKE ?", "%#{search}%")
-      where("summary LIKE ?", "%#{search}%")
+      term = "%#{search}%"
+      where("first_name LIKE ? OR last_name LIKE ? OR summary LIKE ?", term, term, term)
     else
       all
     end
