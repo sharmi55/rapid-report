@@ -20,7 +20,6 @@ $navbar-default-bg: grey;
 
  #logo {
     float: left;
-    font-family:'Courgette', cursive;
     font-size: 2em;
     letter-spacing: -1px;
     font-weight: bold;
@@ -32,13 +31,16 @@ $navbar-default-bg: grey;
     }
   }
 
+  .navbar-default .navbar-nav > li > a {
+   color: white; /*Change active text color here*/
+    }
 
-/*Index pics*/
-.portfolio-item {
-    margin-bottom: 35px;
-}
+    .dropdown-menu > li > a:hover,
+     .dropdown-menu > li > a:focus {
+     text-decoration: none;
+     }
 
-
-footer {
-    margin: 30px 0;
-}
+   .nav > li > a:hover,
+   .nav > li > a:focus {
+      text-decoration: none;
+    }
