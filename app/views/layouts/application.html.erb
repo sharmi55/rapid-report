@@ -16,6 +16,18 @@
         <div id="logo"><%= link_to "Rapid Report", root_path %>
         </div>
 
+
+          <nav class="nav navbar-search">
+            <div class="row">
+              <div class="search-box">
+                <%= form_tag(reports_path, :method => "get", id: "search-form") do %>
+                  <%= text_field_tag :search, params[:search], placeholder: "Search Reports" %>
+                  <%= submit_tag "Search" %>
+                <% end %>
+              </div>
+            </div>
+          </nav>
+
           <nav class="nav navbar-nav navbar-right pull-right">
           	<% if user_signed_in? %>
               <li class="profile-pic"><%= image_tag avatar_url(current_user), class:"img-circle" %></li>

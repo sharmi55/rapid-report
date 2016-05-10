@@ -5,6 +5,11 @@ class ReportsController < ApplicationController
   # GET /reports.json
   def index
     @reports = Report.all
+    if params[:search]
+      @reports = Report.search(params[:search]).order("created_at DESC")
+    else
+      @reports = Report.all.order('created_at DESC')
+    end
   end
 
   # GET /reports/1
