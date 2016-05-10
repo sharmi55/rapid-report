@@ -16,8 +16,10 @@
   </p>
 </div>
 
-<div id="reports">
-  <%= render :partial => @report%>
+<div>
+  <p>
+    <small> Submitted <%= time_ago_in_words(@report.updated_at) %> ago by <%= @report.user.email %> </small>
+  </p>
 </div>
 
 <%= link_to 'Edit', edit_report_path(@report) %> |

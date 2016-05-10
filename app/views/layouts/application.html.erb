@@ -22,7 +22,13 @@
               <div class="search-box">
                 <%= form_tag(reports_path, :method => "get", id: "search-form") do %>
                   <%= text_field_tag :search, params[:search], placeholder: "Search Reports" %>
-                  <%= submit_tag "Search" %>
+                  <%= submit_tag "Search", :name => nil %>
+                <% end %>
+
+                <% if @reports.present? %>
+                  <%= render @reports %>
+                <% else %>
+                  <p>There are no posts containing the term(s) <%= params[:search] %>.</p>
                 <% end %>
               </div>
             </div>
