@@ -16,6 +16,12 @@
   </p>
 </div>
 
+<div >
+  <p><strong>DOB:</strong>
+  <%= @report.birthday %>
+  </p>
+</div>
+
 <div>
   <p>
     <small> Submitted <%= time_ago_in_words(@report.updated_at) %> ago by <%= @report.user.email %> </small>
