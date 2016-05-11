@@ -9,10 +9,17 @@
   </p>
 </div>
 
-<div >
+<div>
   <p><strong>Date of Birth:</strong>
   <%= @report.birthday.strftime("%d/%b/%Y") %>
   </p>
+</div>
+
+<div>
+  <p><strong>Address:</strong>
+    <%= @report.line1 %>
+    <%= @report.line2 %>
+    <%= @report.province %>
 </div>
 
 <div>
