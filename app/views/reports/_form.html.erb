@@ -22,10 +22,17 @@
     <%= f.label :last_name %><br>
     <%= f.text_field :last_name %>
   </div>
+
+  <div class="field">
+  <%= f.label :birthday %><br />
+  <%= f.date_select :birthday, :include_blank => true, :start_year => Time.now.year - 30 %>
+</div>
+
   <div class="field">
     <%= f.label :summary %><br>
     <%= f.text_area :summary %>
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

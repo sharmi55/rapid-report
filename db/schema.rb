@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160505092525) do
+ActiveRecord::Schema.define(version: 20160511102348) do
 
   create_table "reports", force: :cascade do |t|
     t.string   "first_name"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20160505092525) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.datetime "birthday"
   end
 
   add_index "reports", ["user_id"], name: "index_reports_on_user_id"
@@ -41,6 +42,7 @@ ActiveRecord::Schema.define(version: 20160505092525) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
