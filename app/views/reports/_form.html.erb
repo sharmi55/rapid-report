@@ -24,9 +24,25 @@
   </div>
 
   <div class="field">
-  <%= f.label :birthday %><br />
-  <%= f.date_select :birthday, :include_blank => true, :start_year => Time.now.year - 30 %>
-</div>
+    <%= f.label :birthday %><br />
+    <%= f.date_select :birthday, :include_blank => true, :start_year => Time.now.year - 30 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_field :line1, placeholder: 'address line 1' %> <br />
+    <%= f.text_field :line2, placeholder: 'address line 2' %> <br />
+    <%= f.text_field :province, placeholder: 'province' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone_numbers %><br />
+    <%= f.text_field :phone1, placeholder: 'phone number 1' %>
+    <%= f.text_field :relation1, placeholder: 'relation' %> <br />
+    <%= f.text_field :phone2, placeholder: 'phone number 2' %>
+    <%= f.text_field :relation2, placeholder: 'relation' %> <br />
+  </div>
+
 
   <div class="field">
     <%= f.label :summary %><br>
