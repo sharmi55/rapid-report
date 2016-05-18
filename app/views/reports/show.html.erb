@@ -34,9 +34,14 @@
   <p>
   <strong>Secondary phone number:</strong>
     <%= @report.phone2 %>
-    <strong>Contact person</strong>    
+    <strong>Contact person</strong>
     <%= @report.relation2 %>
   </p>
+</div>
+
+<div id='report-chart'>
+  <% data = {"Math"=>87, "Geography"=>100} %>
+  <%= column_chart data, min: 0, max: 100 %>
 </div>
 
 <div>
