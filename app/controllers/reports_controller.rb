@@ -15,6 +15,9 @@ class ReportsController < ApplicationController
   # GET /reports/1
   # GET /reports/1.json
   def show
+    # grades = @report.grades   # String
+    grades = 'Math 100, Geography 87, English 89'
+    @data = grades.split(',').map { |grade| grade.split(' ') }
   end
 
   # GET /reports/new
