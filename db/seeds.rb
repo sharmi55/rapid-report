@@ -5,3 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+sharmi = User.create!(email: 'sharmi@somewhere.com', password: 'password')
+
+20.times do
+  Report.create!(
+    birthday: (rand(10)+1).years.ago,
+    first_name: "Joe",
+    last_name: "Smith",
+    user: sharmi
+    )
+end

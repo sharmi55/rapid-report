@@ -27,6 +27,8 @@ gem 'devise', '~> 4.0', '>= 4.0.1'
 
 gem "paperclip", "~> 5.0.0.beta1"
 
+gem 'pry-rails'
+
 gem 'bootstrap-sass', '~> 3.3.6'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
