@@ -23,6 +23,8 @@ sharmi = User.create!(email: 'sharmi@somewhere.com', password: 'password')
     relation1: Faker::Name.name,
     phone2: Faker::PhoneNumber.phone_number,
     relation2: Faker::Name.name,
+    schoolname: Faker::University.name,
+    schoolclass: Faker::Number.hexadecimal(2),
     summary: Faker::Hipster.paragraphs
     )
 end
