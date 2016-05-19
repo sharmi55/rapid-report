@@ -25,7 +25,7 @@
 
   <div class="field">
     <%= f.label :birthday %><br />
-    <%= f.date_select :birthday, :include_blank => true, :start_year => Time.now.year - 30 %>
+    <%= f.date_select :birthday, :include_blank => true, :start_year => 1990, :end_year => Time.now.year %>
   </div>
 
   <div class="field">
@@ -41,6 +41,12 @@
     <%= f.text_field :relation1, placeholder: 'relation' %> <br />
     <%= f.text_field :phone2, placeholder: 'phone number 2' %>
     <%= f.text_field :relation2, placeholder: 'relation' %> <br />
+  </div>
+
+  <div class="field">
+    <%= f.label :school_information%><br>
+    <%= f.text_field :schoolname, placeholder: 'Nguyen Duy Hieu'%>
+    <%= f.text_field :schoolclass, placeholder: '3A'%>
   </div>
 
 <div class="field">

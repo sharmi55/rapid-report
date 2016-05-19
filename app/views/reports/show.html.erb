@@ -19,6 +19,7 @@
   <p><strong>Address:</strong>
     <%= @report.line1 %>
     <%= @report.line2 %>
+  <strong>Province:</strong>
     <%= @report.province %>
   </p>
 </div>
@@ -27,15 +28,24 @@
   <p>
     <strong>Primary phone number:</strong>
       <%= @report.phone1 %>
-    <strong>Contact person</strong>
+    <strong>Contact person:</strong>
       <%= @report.relation1 %>
   </p>
 
   <p>
   <strong>Secondary phone number:</strong>
     <%= @report.phone2 %>
-    <strong>Contact person</strong>
+  <strong>Contact person:</strong>
     <%= @report.relation2 %>
+  </p>
+</div>
+
+<div class="field">
+  <p>
+  <strong>School information:</strong>
+    <%= @report.schoolname %>
+  <strong>Class:</strong>
+    <%= @report.schoolclass %>
   </p>
 </div>
 
