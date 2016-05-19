@@ -34,9 +34,13 @@
   <p>
   <strong>Secondary phone number:</strong>
     <%= @report.phone2 %>
-    <strong>Contact person</strong>    
+    <strong>Contact person</strong>
     <%= @report.relation2 %>
   </p>
+</div>
+
+<div id='report-chart'>
+  <%= column_chart @data, min: 0, max: 100, colors: ["pink"] %>
 </div>
 
 <div>

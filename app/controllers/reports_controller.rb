@@ -15,6 +15,12 @@ class ReportsController < ApplicationController
   # GET /reports/1
   # GET /reports/1.json
   def show
+    grades = @report.grades   # String
+    if grades.nil?
+      @data = [[]]
+    else
+      @data = grades.split(',').map { |grade| grade.split(' ') }
+    end
   end
 
   # GET /reports/new
@@ -74,6 +80,6 @@ class ReportsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def report_params
-      params.require(:report).permit(:first_name, :last_name, :summary, :image, :birthday, :line1, :line2, :province, :phone1, :relation1, :phone2, :relation2)
+      params.require(:report).permit(:first_name, :last_name, :summary, :image, :birthday, :line1, :line2, :province, :phone1, :relation1, :phone2, :relation2, :grades)
     end
 end
