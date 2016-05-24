@@ -28,90 +28,73 @@
 <p id="notice"><%= notice %></p>
 
 <body>
+
 <div class="container">
+  <div class="featurette">
+    <img class="featurette-image img-circle img-responsive pull-left" <%= image_tag @report.image.url(:medium) %>
+      <h2 class="featurette-heading"><%= @report.first_name + " " + @report.last_name %></h2>
 
-  <!-- Second Featurette -->
-  <div class="featurette" id="services">
-      <img class="featurette-image img-circle img-responsive pull-left" <%= image_tag @report.image.url(:medium) %>
-      <h2 class="featurette-heading"><%= @report.first_name + " " + @report.last_name %>
-      </h2>
-      <div class="lead" class="col-md-8">
-          <div>
-            <p><strong>Date of Birth:</strong>
-            <%= @report.birthday.strftime("%d/%b/%Y") %>
-            </p>
+      <div class="featurette-lead" class="col-md-8">
+        <p><strong>Date of Birth:</strong>
+          <%= @report.birthday.strftime("%d/%b/%Y") %>
+        </p>
+
+        <p><strong>Address:</strong>
+          <%= @report.line1 %>
+          <%= @report.line2 %>
+        <strong>Province:</strong>
+          <%= @report.province %>
+        </p>
+
+        <p>
+          <strong>Primary phone number:</strong>
+            <%= @report.phone1 %><br>
+          <strong>Contact person:</strong>
+            <%= @report.relation1 %>
+        </p>
+
+        <p>
+          <strong>Secondary phone number:</strong>
+            <%= @report.phone2 %><br>
+          <strong>Contact person:</strong>
+            <%= @report.relation2 %>
+        </p>
+
+        <p>
+          <strong>School information:</strong>
+            <%= @report.schoolname %>
+          <strong>Class:</strong>
+            <%= @report.schoolclass %>
+        </p>
+
+        <p>
+        <small> Submitted <%= time_ago_in_words(@report.updated_at) %> ago by <%= @report.user.email %> </small>
+        </p>
+
+        <div class= "row">
+          <div class="col-md-12" class="chart">
+            <strong>Grades by subject:</strong>
+            <%= column_chart @data, min: 0, max: 100, colors: ["pink"] %>
           </div>
-
-          <div>
-            <p><strong>Address:</strong>
-              <%= @report.line1 %>
-              <%= @report.line2 %>
-            <strong>Province:</strong>
-              <%= @report.province %>
-            </p>
-          </div>
-
-          <div>
-            <p>
-              <strong>Primary phone number:</strong>
-                <%= @report.phone1 %><br>
-              <strong>Contact person:</strong>
-                <%= @report.relation1 %>
-            </p>
-
-            <p>
-            <strong>Secondary phone number:</strong>
-              <%= @report.phone2 %><br>
-            <strong>Contact person:</strong>
-              <%= @report.relation2 %>
-            </p>
-          </div>
-
-          <div class="field">
-            <p>
-            <strong>School information:</strong>
-              <%= @report.schoolname %>
-            <strong>Class:</strong>
-              <%= @report.schoolclass %>
-            </p>
-          </div>
-
-          <div>
-            <p>
-              <small> Submitted <%= time_ago_in_words(@report.updated_at) %> ago by <%= @report.user.email %> </small>
-            </p>
-          </div>
-
-          <div>
-            <%= link_to 'Edit', edit_report_path(@report) %> |
-            <%= link_to 'Back', reports_path %>
-          </div>
-
         </div>
+
+        <div class="row">
+          <div class="col-md-12" class="summary">
+            <p>
+              <strong>Summary:</strong><br>
+              <%= @report.summary %>
+            </p>
+          </div>
+        </div>
+
+
+        <div>
+          <%= link_to 'Edit', edit_report_path(@report) %> |
+          <%= link_to 'Back', reports_path %>
+        </div>
+
       </div>
     </div>
   </div>
-
-<div class="row">
-    <div class="col-md-4">
-    </div>
-
-
-
-<div class="col-md-12" class="chart">
-  <%= column_chart @data, min: 0, max: 100, colors: ["pink"] %>
-</div>
-
-<div class="col-md-12" class="summary">
-  <p>
-    <strong>Summary:</strong>
-    <%= @report.summary %>
-  </p>
-</div>
-
-
-
-
-
 </body>
 </html>
